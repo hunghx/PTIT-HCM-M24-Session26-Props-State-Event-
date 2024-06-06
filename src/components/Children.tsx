@@ -1,4 +1,4 @@
-import{ Component } from 'react'
+import  { Component } from 'react'
 type PropTypes = {
     id : number,
     name : string,
@@ -12,10 +12,12 @@ type StateTypes = {
     count : number,
 }
 
+
+
 export default class Children extends Component<PropTypes,StateTypes> {
     constructor(props:PropTypes){
         super(props)
-        // khai báo thêm các thuộc tính khác 
+       // khởi tạo giá trị cho thuocj tính state
         this.state = {
             name : "",
             dob : "",
