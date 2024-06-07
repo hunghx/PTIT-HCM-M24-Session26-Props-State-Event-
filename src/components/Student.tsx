@@ -3,7 +3,8 @@ import { Button } from 'react-bootstrap'
 import { IStudent } from '../App'
 type PropsType = {
     item:IStudent;
-    handleDelete: (id:number)=>void
+    handleDelete: (id:number)=>void,
+    handleEdit : Function
 }
 
 export default class Student extends Component<PropsType> {
@@ -26,7 +27,7 @@ export default class Student extends Component<PropsType> {
                 <td>{address}</td>
                 <td>{phone}</td>
                 <td>{sex?"Nam":"Nữ"}</td>
-                <td className='text-center'><Button variant="warning">Edit</Button></td>
+                <td className='text-center'><Button onClick={()=>this.props.handleEdit(id)} variant="warning">Edit</Button></td>
                 <td className='text-center'><Button onClick={this.beforeHandleDelete} variant="danger">Delete</Button></td>
             </tr>
         )

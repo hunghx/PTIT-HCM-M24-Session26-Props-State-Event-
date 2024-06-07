@@ -4,7 +4,8 @@ import Student from './Student';
 import { IStudent } from '../App';
 interface PropsType {
   data : IStudent[],
-  handleDelete: (id:number)=>void
+  handleDelete: (id:number)=>void,
+  handleEdit : Function
 } 
 
 export default class ListStudent extends Component <PropsType> {
@@ -32,7 +33,7 @@ export default class ListStudent extends Component <PropsType> {
           <tbody>
             {/* lặp danh sách data để hiển thị student */}
             {
-              this.props.data.map((item, index) =><Student handleDelete = {this.props.handleDelete} key={item.id} item={item}/>)
+              this.props.data.map((item, index) =><Student handleEdit= {this.props.handleEdit} handleDelete = {this.props.handleDelete} key={item.id} item={item}/>)
             }
           </tbody>
         </Table>
