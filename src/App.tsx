@@ -2,7 +2,8 @@ import { Component, ReactNode } from "react";
 import ListStudent from "./components/ListStudent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormStudent from "./components/FormStudent";
-import StudentManager from "./components/StudentManager";
+import Modal from "./baitap12/Modal";
+import Calculator from "./baitaptonghop/Calculator"
 
 export interface IStudent {
   id: number;
@@ -75,23 +76,14 @@ class App extends Component<{}, StateType> {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          {/* <div className="col-8">
-            <ListStudent handleEdit = {this.handleEditStudent} data={this.state.data} handleDelete={this.handleDelete} />
-          </div>
-          <div className="col-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Form {this.state.isAdd?"Add":"Edit"}</h5>
-              </div>
-              <FormStudent student={this.state.studentEdit}  isAdd = {this.state.isAdd} handleAdd={this.handleAddStudent}  />
-            </div>
-          </div> */}
+        {/* 
+        Ứng dụng máy tính : 
+         có 10 con số : 0 - 9
+         1 màn hình hiển thị phép tính 
+         các phép : + , - 
+        */}
 
-          {/* form */}
-
-          <StudentManager/>
-        </div>
+        <Calculator/>
       </div>
     )
   }

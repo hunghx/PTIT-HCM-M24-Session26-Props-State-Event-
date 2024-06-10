@@ -61,15 +61,22 @@ export default class FormStudent extends Component<Proptypes,StateTypes> {
         // console.log(this.state)
         
         // console.log("gọi đi update");
-        if(this.props.student){
-            this.setState({
-               ...this.state,    
-            })
-        }
+    
+          if(this.props.student && this.props.student !== prevProps.student ){
+            let {id,name,dob,address,phone,sex} = this.props.student
+            this.setState((pre)=>({
+              ...pre,
+              studentForm:{
+                id : id,
+                name : name,
+                dob : dob,
+                address : address,
+                phone : phone,
+                sex : sex? "true" : "false"
+              }
+            }))
+          }
     }
-    // shouldComponentUpdate(nextProps: Readonly<Proptypes>, nextState: Readonly<StateTypes>, nextContext: any): boolean {
-    //     return true;
-    // }
     
   render() {
     
